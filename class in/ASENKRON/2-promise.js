@@ -31,3 +31,25 @@
 //? Zincirleme olarak kullanilabilirler.
 
 console.log("Promise")
+
+const request = new Promise((resolve, reject) => {
+  const data = { name: "Can", surname: "Canan" } //? mock data
+
+  const success = Math.floor(Math.random() * 5) //? 0 1 2 3 4
+
+  if (success) {
+    resolve(data)
+  } else {
+    reject("Something went wrong")
+  }
+})
+
+request
+  .then((res) => {
+    //? basarili durumlari islemek icin then() metotlari kullanilr.
+    console.log(res)
+    return res
+  })
+  .then((data) => console.log(data.name)) //? zincirleme olarak kullanmak mümkündür. Ancak verinin bir sonraki then'e aktarilmasi gereklidir.
+  .catch((err) => document.write(err)) //? hatayı handle etmek için catch kullanılr.
+  .finally(() => console.log("finally blogu her zaman calisir.")) //? baglatiyi sonlandirma
