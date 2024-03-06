@@ -13,3 +13,4 @@
 console.log("FETCH");
 
 fetch("https://api.github.com/users").then((res) => console.log(res));
+
