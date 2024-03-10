@@ -6,13 +6,13 @@
 
 //! Bu prosese “bubbling”, denilir çünkü event, en içteki elementten en dıştaki elemente kadar bir baloncuk gibi yayılır.
 
-document.querySelector("form").addEventListener("click", () => alert("form"))
+// document.querySelector("form").addEventListener("click", () => alert("form"))
 
-document.querySelector("div").addEventListener("click", () => alert("div"))
+// document.querySelector("div").addEventListener("click", () => alert("div"))
 
-document.querySelector("p").addEventListener("click", () => alert("p"))
+// document.querySelector("p").addEventListener("click", () => alert("p"))
 
-document.querySelector("html").addEventListener("click", () => alert("html"))
+// document.querySelector("html").addEventListener("click", () => alert("html"))
 
 //!  <p> elementinin tiklanmasi ile aşağıdaki sırada olaylar tetiklenir.:
 //* 1-  <p> elementinin kendi event'ı
@@ -48,3 +48,44 @@ document.querySelector("html").addEventListener("click", () => alert("html"))
 // document.querySelector("div").onclick = function (event) {
 //   event.stopPropagation()
 // }
+
+// const request = new Promise((res, rej) => {
+//   const data = { Name: "can", surname: "cansn" }; // mock data
+
+//   const success = Math.floor(Math.random() * 5);
+//   if (success) {
+//     res("network başarılı");
+//   } else {
+//     rej("bir hata oluştu");
+//   }
+// });
+
+// request
+//   .then((res) => console.log(res))
+//   .catch((err) => document.write(err))
+//   .finally(() => console.log("finally her zaman çalışır"));
+const users = document.getElementById("users")
+let userData = "";
+fetch("https://api.github.com/users")
+  .then((res) => {
+    console.log(res);
+    if (!res.ok) {
+      throw new Error("something wrong");
+    }
+    return res.json();
+  })
+  .then((data) => {
+    console.log(data);
+    userData = data;
+    console.log(userData);
+    showUser(data)
+  
+    
+  })
+  .catch((err) => document.write(err));
+
+  const showUser = (data)=> console.log(data);
+
+  users.textContent = showUser()
+
+

@@ -61,7 +61,7 @@ const karesi = document.querySelector("#btn2");
 
 karesi.addEventListener("click", () => {
   if (sayilar.length === 0) {
-    console.log("Lütfen önce random sayıları oluşturun.");
+  alert("Lütfen önce random sayıları oluşturun.");
     return;
   }
 
@@ -79,7 +79,7 @@ const ellidenKucuk = document.getElementById("50denKucuk")
 
 kucuk50.addEventListener("click", () => {
   if (sayilar.length === 0) {
-    console.log("Lütfen önce random sayıları oluşturun.");
+  alert("Lütfen önce random sayıları oluşturun.");
     return;
   }
 
