@@ -54,3 +54,4 @@ const displayNews = (news) => {
   });
 };
 getNews();
+
