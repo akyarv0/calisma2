@@ -49,22 +49,25 @@
 //   event.stopPropagation()
 // }
 
-// const request = new Promise((res, rej) => {
-//   const data = { Name: "can", surname: "cansn" }; // mock data
+const request = new Promise((res, rej) => {
+  const data = { Name: "can", surname: "cansn" }; // mock data
 
-//   const success = Math.floor(Math.random() * 5);
-//   if (success) {
-//     res("network başarılı");
-//   } else {
-//     rej("bir hata oluştu");
-//   }
-// });
+  const success = Math.floor(Math.random() * 5);
+  if (success) {
+    res("network başarılı");
+  } else {
+    rej("bir hata oluştu");
+  }
+});
 
-// request
-//   .then((res) => console.log(res))
-//   .catch((err) => document.write(err))
-//   .finally(() => console.log("finally her zaman çalışır"));
-const users = document.getElementById("users")
+request
+  .then((res) => console.log(res))
+  .catch((err) => document.write(err))
+  .finally(() => console.log("finally her zaman çalışır"));
+
+
+
+
 let userData = "";
 fetch("https://api.github.com/users")
   .then((res) => {
@@ -84,8 +87,17 @@ fetch("https://api.github.com/users")
   })
   .catch((err) => document.write(err));
 
-  const showUser = (data)=> console.log(data);
+  const showUser = (data) => {
+      
+ 
+const usersData = document.getElementById("users")
 
-  users.textContent = showUser()
+data.forEach((user) => {
+  usersData.innerHTML += `<li>${user.login}</li>
+  <img src="${user.avatar_url}" width="100px">
+  `
+})
+}
+
 
 
