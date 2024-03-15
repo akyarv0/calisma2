@@ -1,15 +1,31 @@
-const countryName = async () => {
-  const URL = "https://restcountries.com/v3/all";
-  try {
-    const res = await fetch(URL);
-    const data = res.json();
-    if (!res.ok) {
-      throw new Error("Hata aldınız...");
-    } else {
-      return data;
+// import { app } from "../main";
+
+import { displayCountry } from "./displayCountry";
+
+
+
+export const countryName = async (keyword) => {
+    try {
+      const response = await fetch("https://restcountries.com/v3/all");
+  
+      if (!response.ok) {
+        throw new Error("Failed to fetch country data.");
+      }
+  
+      const data = await response.json();
+
+      displayCountry(data);
+
+
+
+
+    } catch (error) {
+      console.error("Error fetching country data:", error.message);
+
     }
-  } catch (error) {
-    console.log(error);
-  }
-};
+  };
+  
+  
+  
+
 
