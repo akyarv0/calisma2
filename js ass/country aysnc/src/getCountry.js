@@ -5,7 +5,7 @@ import { displayCountry } from "./displayCountry";
 export const countryName = async (keyword) => {
   try {
     const response = await fetch("https://restcountries.com/v3/all");
-    // console.log(response);
+    console.log(response);
     if (!response.ok) {
       throw new Error("Failed to fetch country data.");
     }
@@ -20,16 +20,16 @@ export const countryName = async (keyword) => {
         displayCountry(country);
         found = true;
       }
+      // else{
+      //   alert("ülke bulunamadı") sonsuz döngüye giriyor
+      // }
     });
 
     if (!found) {
       alert("Ülke bulunamadı");
     }
 
-    // if(data.name.common==keyword){
-    //   displayCountry(data.name.common)
-
-    // }
+    
   } catch (error) {
     console.error("Error fetching country data:", error);
   }
