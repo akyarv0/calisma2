@@ -1,103 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-      crossorigin="anonymous"
-    />
-    <title>Document</title>
-  </head>
-  <body>
-    <nav class="navbar bg-light container-fluid">
-      <div class="container">
-        <a class="navbar-brand" href="https://github.com/anthonyharold67"
-          >Anthony Harold</a
-        >
-      </div>
-    </nav>
-    <div class="container text-center">
-      <div class="row">
-        <div class="col-12 col-md-2 col-lg-2">
-          <ul class="list-group">
-            <li class="list-group-item">HarveyCla</li>
-            <li class="list-group-item">omerfaruk2626</li>
-            <li class="list-group-item">aliwert</li>
-            <li class="list-group-item">zeyneparslanj</li>
-            <li class="list-group-item">omer-faruk-oncu</li>
-            <li class="list-group-item">sedadiriker</li>
-            <li class="list-group-item">ykslkrtld</li>
-            <li class="list-group-item">ssimsir</li>
-            <li class="list-group-item">akyarv0</li>
-            <li class="list-group-item">kapucuonur</li>
-            <li class="list-group-item">MaralTach</li>
-            <li class="list-group-item">ersinn26</li>
-            <li class="list-group-item">elvisstone</li>
-          </ul>
-        </div>
-        <div class="col-12 col-md-2 col-lg-2">
-          <ul class="list-group">
-            <li class="list-group-item">busrakocarslan</li>
-            <li class="list-group-item">ilkerkr</li>
-            <li class="list-group-item">ibrsec</li>
-            <li class="list-group-item">Auchera</li>
-            <li class="list-group-item">CemilZemheri</li>
-            <li class="list-group-item">gulsahmy</li>
-            <li class="list-group-item">f-banipal</li>
-            <li class="list-group-item">MeryemSenturk</li>
-            <li class="list-group-item">NurNeva</li>
-            <li class="list-group-item">muhammedkalafat</li>
-            <li class="list-group-item">truthseeker308803</li>
-            <li class="list-group-item">peltekss</li>
-            <li class="list-group-item">emaozdemir</li>
-          </ul>
-        </div>
-        <div class="col-12 col-md-8 col-lg-8">
-          <header>
-            <h2 class="text-center">Github Followers</h2>
-          </header>
-          <main class="container">
-            <search class="d-flex mx-auto justify-content-center">
-              <div class="input-group w-50 mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Github's username"
-                  aria-label="Github's username"
-                  aria-describedby="button-addon2"
-                  required
-                  id="searchText"
-                  autofocus
-                />
-                <button class="btn btn-warning" type="button" id="button">
-                  Get Followers
-                </button>
-              </div>
-            </search>
-            <search class="d-flex mx-auto justify-content-center">
-              <div class="input-group w-50 mb-3">
-                <input
-                  type="search"
-                  class="form-control"
-                  placeholder="Search for Github's username"
-                  aria-label="Github's username"
-                  aria-describedby="button-addon2"
-                  id="searchFollowers"
-                  autofocus
-                />
-              </div>
-            </search>
-            <section
-              class="row row-cols-1 row-cols-md-3 g-4 cards"
-              id="cards"
-            ></section>
-          </main>
-        </div>
-      </div>
-    </div>
-    <script src="app.js"></script>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ülke Bilgileri</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Ülke Bilgileri</h1>
+    <input type="text" id="countryInput" placeholder="Ülke İsmi Girin">
+    <button onclick="getCountryInfo()">Bilgi Al</button>
+    <div id="countryInfo"></div>
+</div>
+<script src="app.js"></script>
+</body>
 </html>
