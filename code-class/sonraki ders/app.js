@@ -3,18 +3,51 @@
 
 //! 1. Ürünleri temsil etmek için bir array ve her ürünü tanımlamak için bir obje kullanarak bir ürün listesi oluşturun. Her ürünün en az 3 özelliği olmalıdır.
 
-const urunler = [
-    { isim: "Laptop", fiyat: 5000, stokAdedi: 10 },
-    { isim: "Telefon", fiyat: 2000, stokAdedi: 15 },
-    { isim: "Tablet", fiyat: 1000, stokAdedi: 20 },
-  ];
-  
-  
+
+
+
+// const urunler = [
+//     { isim: "Laptop", fiyat: 5000, stokAdedi: 10 },
+//     { isim: "Telefon", fiyat: 2000, stokAdedi: 15 },
+//     { isim: "Tablet", fiyat: 1000, stokAdedi: 20 },
+//   ];
+
+
   // //! 2. Bir kullanıcı sepetini temsil eden bir obje oluşturun. Sepet boş başlamalı.
   // const kullaniciSepeti = {};
-  
+
   // //! 3.Bir fonksiyon yazın (sepeteEkle), bu fonksiyon bir ürün ve adet parametreleri almalı ve kullanıcının sepetine belirtilen adette ürün eklemelidir. Eğer eklenmek istenen adet, ürünün stok adedinden fazlaysa uygun bir mesaj verilmelidir.
-  
+
+
+
+
+
+  const note = {
+    id: 1,
+    title: 'My first note',
+    date: '01/01/1970',
+    author: {
+      firstName: 'John',
+      lastName: 'Doe',
+      email: 'johndoe@example.com',
+    },
+  };
+  // traditional way
+  // const id = note.id;
+  // const title = note.title;
+  // const firstName = note.author.firstName;
+  // destructuring
+  const { id, title, date, author: { firstName, lastName, email } } = note;
+  console.log(`${firstName}'nun soyadı ${lastName}`, id, title, date, email);
+
+
+
+
+
+
+
+
+
   // const [laptop, telefon, tablet] = urunler;
   // // console.log(laptop);
   // const sepeteEkle = (urun, adet) => {
