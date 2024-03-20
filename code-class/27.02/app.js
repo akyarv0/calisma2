@@ -11,24 +11,8 @@ const restoranMenusu = {
     fiyat: 12
   }
 };
-function yemekFiyati(yemekAdi) {
-  if (restoranMenusu[yemekAdi]) {
-    return `${yemekAdi} fiyatı: ${restoranMenusu[yemekAdi].fiyat} TL`;
-  }
-  return `Üzgünüz, ${yemekAdi} menüde bulunmamaktadır.`;
-}
 
 // const yemekAdi = 'pizza';
-const yemekAdi = "pilav"
-
-const fiyatBilgisi = yemekFiyati(yemekAdi);
-console.log(fiyatBilgisi); 
-
-
-
-Object.keys(restoranMenusu).forEach((yemekAdi) => {
-  console.log(`${yemekAdi} fiyatı: ${restoranMenusu[yemekAdi].fiyat} TL`);
-});
 
 
 
@@ -64,20 +48,45 @@ var calisanlar = [
     { ad: "Ahmet", departman: "İnsan Kaynakları", maas: 5000 }
   ];
 
+function maaslar(){
 
-  function departmanMaasOrtalamasi(departman) {
-    const departmandakiCalisanlar = calisanlar.filter(calisan => calisan.departman === departman);
-    if (departmandakiCalisanlar.length === 0) {
-      return "Belirtilen departmanda çalışan bulunamadı!";
-    }
-    const toplamMaas = departmandakiCalisanlar.reduce((toplam, calisan) => toplam + calisan.maas, 0);
-    const maasOrtalamasi = toplamMaas / departmandakiCalisanlar.length;
-    return maasOrtalamasi;
-  }
+ calisanlar.forEach((calisan)=> console.log(calisan.maas))
+
+}
+ maaslar()
+
+ const ortalamaMaas = calisanlar.reduce((toplam, maas)=> toplam+=maas,0)
+ console.log(ortalamaMaas);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   function departmanMaasOrtalamasi(departman) {
+//     const departmandakiCalisanlar = calisanlar.filter(calisan => calisan.departman === departman);
+//     if (departmandakiCalisanlar.length === 0) {
+//       return "Belirtilen departmanda çalışan bulunamadı!";
+//     }
+//     const toplamMaas = departmandakiCalisanlar.reduce((toplam, calisan) => toplam + calisan.maas, 0);
+//     const maasOrtalamasi = toplamMaas / departmandakiCalisanlar.length;
+//     return maasOrtalamasi;
+//   }
   
-  console.log(departmanMaasOrtalamasi("Muhasebe")); // Beklenen çıktı: 4250
-  console.log(departmanMaasOrtalamasi("Satış")); // Beklenen çıktı: 5500
-  console.log(departmanMaasOrtalamasi("Bilgi Teknolojileri")); // Beklenen çıktı: Belirtilen departmanda çalışan bulunamadı!
+//   console.log(departmanMaasOrtalamasi("Muhasebe")); // Beklenen çıktı: 4250
+//   console.log(departmanMaasOrtalamasi("Satış")); // Beklenen çıktı: 5500
+//   console.log(departmanMaasOrtalamasi("Bilgi Teknolojileri")); // Beklenen çıktı: Belirtilen departmanda çalışan bulunamadı!
 
 
 
@@ -87,13 +96,29 @@ var calisanlar = [
 
 
 
-  //! Bir online öğrenci takip sistemi geliştiriyorsunuz. Her öğrencinin adı, sınıfı ve aldığı dersler bilgilerini içeren bir öğrenci nesnesi oluşturun. Ayrıca, her dersin adı, öğretmeni ve öğrencilere verilen notlar bilgilerini içeren bir ders nesnesi oluşturun.
+//   //! Bir online öğrenci takip sistemi geliştiriyorsunuz. Her öğrencinin adı, sınıfı ve aldığı dersler bilgilerini içeren bir öğrenci nesnesi oluşturun. Ayrıca, her dersin adı, öğretmeni ve öğrencilere verilen notlar bilgilerini içeren bir ders nesnesi oluşturun.
 
-// 1. Öğrencilerin derslere kaydolmasını sağlayan bir fonksiyon yazın. Bu fonksiyon, öğrencinin adını ve kaydolmak istediği dersleri almalıdır.
-// 2. Bir öğrencinin aldığı notları görüntüleyen bir fonksiyon yazın. Bu fonksiyon, öğrencinin adını almalı ve aldığı dersler ile bu derslerde aldığı notları listelemelidir.
-// 3. Bir dersin öğrencilerinin not ortalamasını hesaplayan bir fonksiyon yazın. Bu fonksiyon, dersin adını almalı ve bu derse kayıtlı öğrencilerin not ortalamasını döndürmelidir.
+// // 1. Öğrencilerin derslere kaydolmasını sağlayan bir fonksiyon yazın. Bu fonksiyon, öğrencinin adını ve kaydolmak istediği dersleri almalıdır.
+// // 2. Bir öğrencinin aldığı notları görüntüleyen bir fonksiyon yazın. Bu fonksiyon, öğrencinin adını almalı ve aldığı dersler ile bu derslerde aldığı notları listelemelidir.
+// // 3. Bir dersin öğrencilerinin not ortalamasını hesaplayan bir fonksiyon yazın. Bu fonksiyon, dersin adını almalı ve bu derse kayıtlı öğrencilerin not ortalamasını döndürmelidir.
 
-// Bu özellikleri gerçekleştiren bir JavaScript programı yazın.
+// // Bu özellikleri gerçekleştiren bir JavaScript programı yazın.
 
 
-// Öğrenci ve ders nesneleri oluşturulması
+// // Öğrenci ve ders nesneleri oluşturulmasıconst numbers = [1, 2, 3, 4, 5];
+// const numbers = [1, 2, 3, 4, 5];
+// const sum = numbers.reduce((total, num, index, array) => {
+//   console.log(`Total: ${total}, Number: ${num}, Index: ${index}, Array: ${array}`);
+//   return total + num;
+// }, 0);
+
+// console.log(sum); // Output: 15
+
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// const toplam = numbers.filter((num)=> num=num%2==0).reduce((toplam,num)=> toplam+=num,0)
+// console.log(toplam);
+
+const numbers = [1, 2, 3, 4, 5];
+
+
