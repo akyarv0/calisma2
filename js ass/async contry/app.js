@@ -56,7 +56,7 @@ const renderCountry = ({
     name: { common },
     capital,
     region,
-    flags: { svg },
+    flags,
     languages,
     currencies,
     population,
@@ -67,7 +67,7 @@ const renderCountry = ({
   
     countries.innerHTML = `
       <div class="card shadow-lg" style="width: 22rem">
-        <img src="${svg}" class="card-img-top shadow" alt="..." />
+        <img src="${flags[0]}" class="card-img-top shadow" alt="..." />
         <div>
           <h5 class="p-2 text-center">${common}</h5>
         </div>
